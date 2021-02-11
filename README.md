@@ -14,39 +14,45 @@ Obs:
 
 Asumo que se tiene instalado Docker.
 
-Entramos a la terminal y tecleamos lo siguiente:
+- Entramos a la terminal y tecleamos lo siguiente:
+
 ```bash 
 docker pull sonarqube 
 ```
 
-Crear contenedor:(ver los puertos 9095 y 9092 no este ocupado)
+- Crear contenedor:(ver los puertos 9095 y 9092 no este ocupado)
+
 ```bash 
 docker run -d --name sonarqube -p 9095:9000 -p 9092:9092 sonarqube
 ```
 
-Entrar al navegador y teclear en la barra de direcciones:
+- Entrar al navegador y teclear en la barra de direcciones:
+
 ```bash 
 http://localhost:9095
 ```
-Credenciales por defecto:
+- Credenciales por defecto:
 User: admin
 Pass: admin
 Cambiamos el password a 123456
 
-Crear archivo sonar-project.properties
+- Crear archivo sonar-project.properties
 
-Para escanear un código fuente es necesario tener una imagen de sonar-scanner:
- ```bash 
- docker pull newtmitch/sonar-scanner
- ```
+- Para escanear un código fuente es necesario tener una imagen de sonar-scanner:
 
-Corremos:
+```bash 
+docker pull newtmitch/sonar-scanner
+```
+
+- Corremos:
 Linux/MacOS
+
 ```bash 
 docker run -ti -v /pwd:/usr/src --link sonarqube newtmitch/sonar-scanner
 ```
 
 Microsoft Windows 10
+
 ```bash 
 docker run -ti -v C:\Users\joseg\repositoriosGit\api-paraguayos:/usr/src --link sonarqube newtmitch/sonar-scanner
 ```
