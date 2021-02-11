@@ -32,9 +32,12 @@ docker run -d --name sonarqube -p 9095:9000 -p 9092:9092 sonarqube
 http://localhost:9095
 ```
 - Credenciales por defecto:
+
+```bash 
 User: admin
 Pass: admin
 Cambiamos el password a 123456
+```
 
 - Crear archivo sonar-project.properties
 
